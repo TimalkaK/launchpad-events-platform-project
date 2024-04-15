@@ -1,0 +1,115 @@
+
+Note on ShareAlike licences:
+
+The ShareAlike condition applies only for works considered adaptations under copyright law, not simply in collections with other works (also referred to as mere aggregations). When a ShareAlike work is remixed and shared, any Adapted Material must be licensed compatibly—but not all reuse of SA works creates Adapted Material.[2] Simply including an SA work unmodified alongside unrelated materials does not produce an adaptation.
+
+ShareAlike photo being used unmodified in a larger work. Unless the larger work would be considered an adaptation of it, using a ShareAlike photo as a separate element within it does not require original materials in the larger work to be ShareAlike or compatible. The larger work may be licensed under any terms.
+
+ShareAlike material referenced in a course. You may refer to ShareAlike material in a course without affecting the licensing of the course itself. For example, any course on film studies may discuss an SA-licensed movie without requiring the course itself to be ShareAlike. This is because the course is not based on or derived from the SA film; the film is simply an item being studied.
+
+Note on No-Derivative licences:
+Generally, no derivative work is made of the original from which the excerpt was taken when the excerpt is used to illuminate an idea or provide an example in another larger work.
+
+----
+
+Cat1
+
+"Daemon cat" (CC BY-SA 2.0) by amblin
+
+<a rel='license' href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC BY-SA 2.0</a>)&nbsp;by&nbsp;<a xmlns:cc='http://creativecommons.org/ns#' rel='cc:attributionURL' property='cc:attributionName' href='https://www.flickr.com/people/amblin/' target='_blank'>amblin</a>
+
+
+——
+
+Cat2
+
+"cat" (CC BY-SA 2.0) by ivva
+
+<a rel='license' href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC BY-SA 2.0</a>)&nbsp;by&nbsp;<a xmlns:cc='http://creativecommons.org/ns#' rel='cc:attributionURL' property='cc:attributionName' href='https://www.flickr.com/people/ivva/' target='_blank'>ivva</a>
+
+
+—
+
+Cat3
+
+"Cat" (CC BY-ND 2.0) by Rachele Pettarelli Ph
+
+<a rel='license' href='https://creativecommons.org/licenses/by-nd/2.0/' target='_blank'>CC BY-ND 2.0</a>)&nbsp;by&nbsp;<a xmlns:cc='http://creativecommons.org/ns#' rel='cc:attributionURL' property='cc:attributionName' href='https://www.flickr.com/people/rachephotos/' target='_blank'>Rachele Pettarelli Ph</a>
+
+
+—
+
+Cat4
+
+"Cat" (CC BY 2.0) by renarl
+
+<a rel='license' href='https://creativecommons.org/licenses/by/2.0/' target='_blank'>CC BY 2.0</a>)&nbsp;by&nbsp;<a xmlns:cc='http://creativecommons.org/ns#' rel='cc:attributionURL' property='cc:attributionName' href='https://www.flickr.com/people/renarl/' target='_blank'>renarl</a>
+
+
+—
+
+Cat5
+
+"Cats" (CC BY-SA 2.0) by x-oph
+
+<a rel='license' href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC BY-SA 2.0</a>)&nbsp;by&nbsp;<a xmlns:cc='http://creativecommons.org/ns#' rel='cc:attributionURL' property='cc:attributionName' href='https://www.flickr.com/people/x-oph/' target='_blank'>x-oph</a>
+
+—
+
+Cat6
+
+"cats" (CC BY-ND 2.0) by arrathoonlaa@att.net
+
+<a rel='license' href='https://creativecommons.org/licenses/by-nd/2.0/' target='_blank'>CC BY-ND 2.0</a>)&nbsp;by&nbsp;<a xmlns:cc='http://creativecommons.org/ns#' rel='cc:attributionURL' property='cc:attributionName' href='https://www.flickr.com/people/21851382@N04/' target='_blank'>arrathoonlaa@att.net</a>
+
+—
+
+
+Cat7
+
+"cat" (CC BY 2.0) by pavlovskyy
+
+
+<a rel='license' href='https://creativecommons.org/licenses/by/2.0/' target='_blank'>CC BY 2.0</a>)&nbsp;by&nbsp;<a xmlns:cc='http://creativecommons.org/ns#' rel='cc:attributionURL' property='cc:attributionName' href='https://www.flickr.com/people/pavlovskyy/' target='_blank'>pavlovskyy</a>
+
+
+—
+
+Cat8
+
+"Cat" (CC BY 2.0) by AleGranholm
+
+<a rel='license' href='https://creativecommons.org/licenses/by/2.0/' target='_blank'>CC BY 2.0</a>)&nbsp;by&nbsp;<a xmlns:cc='http://creativecommons.org/ns#' rel='cc:attributionURL' property='cc:attributionName' href='https://www.flickr.com/people/darthale/' target='_blank'>AleGranholm</a>
+
+—
+
+Cat9
+
+"cat" (CC BY 2.0) by Sardonic G
+
+<a rel='license' href='https://creativecommons.org/licenses/by/2.0/' target='_blank'>CC BY 2.0</a>)&nbsp;by&nbsp;<a xmlns:cc='http://creativecommons.org/ns#' rel='cc:attributionURL' property='cc:attributionName' href='https://www.flickr.com/people/24039825@N06/' target='_blank'>Sardonic G</a>
+
+—
+
+Cat10
+
+"Cats" (CC BY 2.0) by www.metaphoricalplatypus.com
+
+<a rel='license' href='https://creativecommons.org/licenses/by/2.0/' target='_blank'>CC BY 2.0</a>)&nbsp;by&nbsp;<a xmlns:cc='http://creativecommons.org/ns#' rel='cc:attributionURL' property='cc:attributionName' href='https://www.flickr.com/people/29638108@N06/' target='_blank'>www.metaphoricalplatypus.com</a>
+
+
+—
+
+Cat11
+
+"Cat" (CC BY-SA 2.0) by abraham.williams
+
+<a rel='license' href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC BY-SA 2.0</a>)&nbsp;by&nbsp;<a xmlns:cc='http://creativecommons.org/ns#' rel='cc:attributionURL' property='cc:attributionName' href='https://www.flickr.com/people/4braham/' target='_blank'>abraham.williams</a>
+
+—
+
+
+Cat12
+"Cats" (CC BY-SA 2.0) by x-oph
+
+<a rel='license' href='https://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC BY-SA 2.0</a>)&nbsp;by&nbsp;<a xmlns:cc='http://creativecommons.org/ns#' rel='cc:attributionURL' property='cc:attributionName' href='https://www.flickr.com/people/x-oph/' target='_blank'>x-oph</a>
