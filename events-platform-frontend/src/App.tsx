@@ -1,6 +1,7 @@
 import "./App.css";
 import Navbar from "./components/navbar";
-import Header from "./components/header";
+import { AddEvents } from "./components/addEvents/addEvents";
+import Login from "./components/login";
 import Footer from "./components/footer";
 import { useState } from "react";
 import Event from "./data/event";
@@ -36,15 +37,30 @@ function App(): JSX.Element {
       price: 0,
     },
   ];
-  eventData.forEach((event) => (event.id = uuidv4()));
-  console.log(eventData); // each cat should now have a unique ID
+  eventData.forEach((event) => (event.id = uuidv4())); // each event should now have a unique ID
 
   const [events, setEvents] = useState<Array<Event>>(eventData);
+
+  const createEvent = (anEvent: Event) => {
+    console.log("Yay I am on the parent component", anEvent);
+    setEvents([
+      ...events,
+      {
+        id: uuidv4(),
+        name: anEvent.name,
+        description: anEvent.description,
+        date: anEvent.date,
+        time: anEvent.time,
+        price: anEvent.price,
+      },
+    ]);
+    console.log(events);
+  };
 
   return (
     <>
       <Navbar />
-      {/*<Header catCount={catCount}></Header>*/}
+      <AddEvents onAdd={createEvent} />
       <main>
         <div className="cards__wrapper">
           {events.map((event, index) => (

@@ -10,6 +10,11 @@ function Navbar(): JSX.Element {
           </a>
         </li>
         <li>
+          <a className="links" href="addEvents">
+            Add Events
+          </a>
+        </li>
+        <li>
           <a className="links" href="signup">
             Sign Up
           </a>
