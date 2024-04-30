@@ -2,15 +2,9 @@ import EventImage from "./event_image";
 import yogaspace from "../assets/images/yogaspace.jpg";
 import crystals from "../assets/images/crystals.jpg";
 import soundbowls from "../assets/images/soundbowls.jpg";
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 import { gapi } from "gapi-script";
 import { calendar_v3 } from "googleapis";
 
-=======
->>>>>>> parent of c62edad (Feat: Added google calendar insertion functionality and change date to type Date)
->>>>>>> 4149dc3 (feat: Implemented reserve button with gcal insertion and add Events functionality and changed dates to date type)
 const images = [
   {
     //image: cat1,
@@ -43,16 +37,8 @@ const images = [
 interface EventCardProps {
   name: string;
   description: string;
-<<<<<<< HEAD
-  date: string;
-=======
-<<<<<<< HEAD
   startDate: Date;
   endDate: Date;
-=======
-  date: string;
->>>>>>> parent of c62edad (Feat: Added google calendar insertion functionality and change date to type Date)
->>>>>>> 4149dc3 (feat: Implemented reserve button with gcal insertion and add Events functionality and changed dates to date type)
   time: string;
   price: number;
   eventIndex: number;
@@ -61,15 +47,12 @@ interface EventCardProps {
 const EventCard: React.FC<EventCardProps> = ({
   name,
   description,
-  date,
+  startDate,
+  endDate,
   time,
   price,
   eventIndex,
 }) => {
-<<<<<<< HEAD
-  // console.log('CatCard receiving props from App?! Come in App?! 😸 Props received are: ', props);
-=======
-<<<<<<< HEAD
   const CLIENT_ID = `${process.env.REACT_APP_EVENT_PLATFORM_CLIENT_ID}`;
   const API_KEY = `${process.env.REACT_APP_EVENT_PLATFORM_API_KEY}`;
   const DISCOVERY_DOCS = [
@@ -155,10 +138,6 @@ const EventCard: React.FC<EventCardProps> = ({
         });
     });
   };
-=======
-  // console.log('CatCard receiving props from App?! Come in App?! 😸 Props received are: ', props);
->>>>>>> parent of c62edad (Feat: Added google calendar insertion functionality and change date to type Date)
->>>>>>> 4149dc3 (feat: Implemented reserve button with gcal insertion and add Events functionality and changed dates to date type)
 
   return (
     <div className="card">
@@ -172,27 +151,17 @@ const EventCard: React.FC<EventCardProps> = ({
       attributionUrl={images[eventIndex].attributionUrl}*/
         />
       )}
-<<<<<<< HEAD
-      <h3 className="card__text card__header">
-        {name} - {date}
-      </h3>
-=======
-<<<<<<< HEAD
+
+      <h3 className="card__text card__header">{name}</h3>
       <h3 className="card__text card__header">{name}</h3>
       <p className="card__text">
-        {startDate.toLocaleDateString("en-GB", { dateStyle: "medium" })} -{" "}
+        {startDate.toLocaleDateString("en-GB", { dateStyle: "medium" })} -
         {endDate.toLocaleDateString("en-GB", { dateStyle: "medium" })}
       </p>
-=======
-      <h3 className="card__text card__header">
-        {name} - {date}
-      </h3>
->>>>>>> parent of c62edad (Feat: Added google calendar insertion functionality and change date to type Date)
->>>>>>> 4149dc3 (feat: Implemented reserve button with gcal insertion and add Events functionality and changed dates to date type)
       <p className="card__text">{description}</p>
       <p className="card__text">Time: {time}</p>
       <p className="card__text">£{price}</p>
-      <button>Reserve</button>
+      <button onClick={handleReserve}>Reserve</button>
     </div>
   );
 };

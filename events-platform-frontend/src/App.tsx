@@ -16,57 +16,27 @@ function App(): JSX.Element {
       name: "Women's Circle",
       description:
         "An evening of Insights, Rituals, Sharing and Crystal Bowl Sound Healing.",
-<<<<<<< HEAD
-      date: "25th April 2024",
-      time: "5-7pm",
-=======
-<<<<<<< HEAD
       startDate: new Date("04/25/24"),
       endDate: new Date("04/25/24"),
       time: "17:00-19:00",
-=======
-      date: "25th April 2024",
-      time: "5-7pm",
->>>>>>> parent of c62edad (Feat: Added google calendar insertion functionality and change date to type Date)
->>>>>>> 4149dc3 (feat: Implemented reserve button with gcal insertion and add Events functionality and changed dates to date type)
       price: 0,
     },
     {
       name: "Intention Setting with Crystals",
       description:
         "An ideal workshop for those who want to learn how to work with crystal magic",
-<<<<<<< HEAD
-      date: "4th May 2024",
-      time: "10-11am",
-=======
-<<<<<<< HEAD
       startDate: new Date("05/04/24"),
       endDate: new Date("05/04/24"),
       time: "10:00-11:00",
-=======
-      date: "4th May 2024",
-      time: "10-11am",
->>>>>>> parent of c62edad (Feat: Added google calendar insertion functionality and change date to type Date)
->>>>>>> 4149dc3 (feat: Implemented reserve button with gcal insertion and add Events functionality and changed dates to date type)
       price: 0,
     },
     {
       name: "Sound Scapes",
       description:
         "An immersive sonic journey guided by the high vibrational frequencies of the gong, alchemic crystal bowls, shamanic drums, chimes, bells, and other ancient therapeutic instruments.",
-<<<<<<< HEAD
-      date: "10th May 2024",
-      time: "7-8pm",
-=======
-<<<<<<< HEAD
       startDate: new Date("05/10/24"),
       endDate: new Date("05/10/24"),
       time: "19:00-20:00",
-=======
-      date: "10th May 2024",
-      time: "7-8pm",
->>>>>>> parent of c62edad (Feat: Added google calendar insertion functionality and change date to type Date)
->>>>>>> 4149dc3 (feat: Implemented reserve button with gcal insertion and add Events functionality and changed dates to date type)
       price: 0,
     },
   ];
@@ -82,7 +52,8 @@ function App(): JSX.Element {
         id: uuidv4(),
         name: anEvent.name,
         description: anEvent.description,
-        date: anEvent.date,
+        startDate: anEvent.startDate,
+        endDate: anEvent.endDate,
         time: anEvent.time,
         price: anEvent.price,
       },
@@ -101,7 +72,8 @@ function App(): JSX.Element {
               key={event.id}
               name={event.name}
               description={event.description}
-              date={event.date}
+              startDate={event.startDate}
+              endDate={event.endDate}
               time={event.time}
               price={event.price}
               eventIndex={index}
