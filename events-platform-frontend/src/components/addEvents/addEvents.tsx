@@ -9,7 +9,16 @@ interface FuncProps {
 export const AddEvents = ({ onAdd = () => {} }: FuncProps) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+<<<<<<< HEAD
   const [date, setDate] = useState("");
+=======
+<<<<<<< HEAD
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+=======
+  const [date, setDate] = useState("");
+>>>>>>> parent of c62edad (Feat: Added google calendar insertion functionality and change date to type Date)
+>>>>>>> 4149dc3 (feat: Implemented reserve button with gcal insertion and add Events functionality and changed dates to date type)
   const [time, setTime] = useState("");
   const [price, setPrice] = useState(0);
   const [disableButton, setDisableButton] = useState(true);
@@ -52,7 +61,16 @@ export const AddEvents = ({ onAdd = () => {} }: FuncProps) => {
 
     setName("");
     setDescription("");
+<<<<<<< HEAD
     setDate("");
+=======
+<<<<<<< HEAD
+    setStartDate(new Date());
+    setEndDate(new Date());
+=======
+    setDate("");
+>>>>>>> parent of c62edad (Feat: Added google calendar insertion functionality and change date to type Date)
+>>>>>>> 4149dc3 (feat: Implemented reserve button with gcal insertion and add Events functionality and changed dates to date type)
     setTime("");
     setPrice(0);
   };
@@ -81,7 +99,25 @@ export const AddEvents = ({ onAdd = () => {} }: FuncProps) => {
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
         <br />
+<<<<<<< HEAD
         <label htmlFor="date">Date</label>
+=======
+<<<<<<< HEAD
+        <DatePicker
+          name="date"
+          selected={startDate}
+          onChange={(thedate) => setStartDate(startDate)}
+        />
+        <DatePicker
+          name="date"
+          selected={endDate}
+          onChange={(thedate) => setStartDate(endDate)}
+        />
+        {/*<label htmlFor="date">Date</label>
+=======
+        <label htmlFor="date">Date</label>
+>>>>>>> parent of c62edad (Feat: Added google calendar insertion functionality and change date to type Date)
+>>>>>>> 4149dc3 (feat: Implemented reserve button with gcal insertion and add Events functionality and changed dates to date type)
         <input
           type="text"
           name="date"
