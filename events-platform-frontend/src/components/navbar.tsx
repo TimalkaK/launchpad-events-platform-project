@@ -1,23 +1,31 @@
+import { Link } from "react-router-dom";
+
 // components are functions that return JSX.Element
 // i.e. a React.FC IS a function that returns JSX.Element
+
 function Navbar(): JSX.Element {
   return (
     <nav className="nav__container">
       <ul className="nav__container ul ul__navbar">
         <li>
-          <a className="links" href="login">
-            Login
-          </a>
+          <Link className="links" to="/">
+            Home
+          </Link>
         </li>
         <li>
-          <a className="links" href="addEvents">
+          <Link className="links" to="/addEvents">
             Add Events
-          </a>
+          </Link>
         </li>
         <li>
-          <a className="links" href="signup">
+          <Link className="links" to="/login">
+            Login
+          </Link>
+        </li>
+        <li>
+          <Link className="links" to="/signup">
             Sign Up
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

@@ -7,10 +7,10 @@ import { useState } from "react";
 import Event from "./data/event";
 import EventCard from "./components/event_card";
 import { v4 as uuidv4 } from "uuid";
+import { Route, Routes } from "react-router-dom";
+import { HomePage } from "./components/home_page";
 
 function App(): JSX.Element {
-  // JavaScript/TypeScript code can be inserted here!
-
   const eventData: Array<Event> = [
     {
       name: "Women's Circle",
@@ -64,8 +64,17 @@ function App(): JSX.Element {
   return (
     <>
       <Navbar />
-      <AddEvents onAdd={createEvent} />
       <main>
+        <div className="route_container">
+          <Routes>
+            <Route
+              path="/addEvents"
+              element={<AddEvents onAdd={createEvent} />}
+            />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </div>
+
         <div className="cards__wrapper">
           {events.map((event, index) => (
             <EventCard
