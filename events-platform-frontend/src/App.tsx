@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./components/navbar";
 import { AddEvents } from "./components/addEvents/addEvents";
-import Login from "./components/login";
+import Login from "./components/loginForm/login";
 import Footer from "./components/footer";
 import { useState } from "react";
 import Event from "./data/event";
@@ -67,6 +67,7 @@ function App(): JSX.Element {
       <main>
         <div className="route_container">
           <Routes>
+            <Route path="/" element={<HomePage />} />
             <Route
               path="/addEvents"
               element={<AddEvents onAdd={createEvent} />}

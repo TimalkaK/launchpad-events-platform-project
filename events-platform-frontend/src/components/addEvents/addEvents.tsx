@@ -44,7 +44,7 @@ export const AddEvents = ({ onAdd = () => {} }: FuncProps) => {
         setValidation(
           "Please write a description between 100 and 1200 characters."
         );
-      } else if (time.length < 1 || description.length > 13) {
+      } else if (time.length < 1 || time.length > 13) {
         setValidation(
           "Please make sure time is in a 24hr format with a dash in the middle e.g 18:00 - 20:00."
         );
@@ -111,14 +111,6 @@ export const AddEvents = ({ onAdd = () => {} }: FuncProps) => {
           selected={endDate}
           onChange={(thedate: Date) => setEndDate(thedate)}
         />
-        {/*<label htmlFor="date">Date</label>
-        <input
-          type="text"
-          name="date"
-          id="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-  ></input>*/}
         <br />
         <label htmlFor="time">Time</label>
         <input

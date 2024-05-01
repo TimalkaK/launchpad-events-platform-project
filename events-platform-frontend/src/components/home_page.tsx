@@ -1,10 +1,16 @@
-import "./App.css";
 import { useState } from "react";
 import Event from "../data/event";
 import EventCard from "../components/event_card";
 import { v4 as uuidv4 } from "uuid";
 
 export const HomePage = () => {
+  return (
+    <header className="header__container">
+      <h1 className="header__title header__welcome">Welcome to React!</h1>
+      <h2 className="header__title">Home Page</h2>
+    </header>
+  );
+
   /*
 
   const eventData: Array<Event> = [
