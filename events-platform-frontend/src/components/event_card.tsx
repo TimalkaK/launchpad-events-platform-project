@@ -153,7 +153,6 @@ const EventCard: React.FC<EventCardProps> = ({
       )}
 
       <h3 className="card__text card__header">{name}</h3>
-      <h3 className="card__text card__header">{name}</h3>
       <p className="card__text">
         {startDate.toLocaleDateString("en-GB", { dateStyle: "medium" })} -
         {endDate.toLocaleDateString("en-GB", { dateStyle: "medium" })}

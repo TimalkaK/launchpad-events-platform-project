@@ -5,7 +5,7 @@ export interface ValidateProps {
 export const Validate: React.FC<ValidateProps> = (props) => {
   return (
     <>
-      <p style={{ color: "red" }}>{props.message}</p>
+      <p style={{ color: "black" }}>{props.message}</p>
     </>
   );
 };
