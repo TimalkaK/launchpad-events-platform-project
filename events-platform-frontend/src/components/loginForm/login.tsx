@@ -34,9 +34,9 @@ export const Login = () => {
   };
 
   return (
-    <section className="login_form">
+    <section className="form_container">
       <h2 className="header__title">Log In</h2>
-      <form name="form" onSubmit={handleSubmit}>
+      <form className="login_form" name="form" onSubmit={handleSubmit}>
         <label htmlFor="userEmail">Email</label>
         <input
           type="email"
@@ -58,7 +58,9 @@ export const Login = () => {
         ></input>
         <br />
         <ValidateLogin message={showValidation} />
-        <button disabled={disableButton}>Login</button>
+        <button className="submit_btn" disabled={disableButton}>
+          Login
+        </button>
       </form>
     </section>
   );

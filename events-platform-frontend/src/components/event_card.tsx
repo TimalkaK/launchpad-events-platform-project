@@ -160,7 +160,9 @@ const EventCard: React.FC<EventCardProps> = ({
       <p className="card__text">{description}</p>
       <p className="card__text">Time: {time}</p>
       <p className="card__text">£{price}</p>
-      <button onClick={handleReserve}>Reserve</button>
+      <button className="reserve_btn" onClick={handleReserve}>
+        Reserve
+      </button>
     </div>
   );
 };

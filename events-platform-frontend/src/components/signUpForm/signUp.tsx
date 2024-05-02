@@ -45,9 +45,9 @@ export const SignUp = () => {
   };
 
   return (
-    <section className="sign_up">
+    <section className="form_container">
       <h2 className="header__title">Sign Up</h2>
-      <form name="form" onSubmit={handleSubmit}>
+      <form className="signup_form" name="form" onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -87,7 +87,9 @@ export const SignUp = () => {
         ></input>
         <br />
         <ValidateSignUp message={showValidation} />
-        <button disabled={disableButton}>Sign Up</button>
+        <button className="submit_btn" disabled={disableButton}>
+          Sign Up
+        </button>
       </form>
     </section>
   );

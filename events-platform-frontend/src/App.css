@@ -43,9 +43,7 @@ body {
 }
 
 .cards__wrapper,
-.add_events,
-.login_form,
-.sign_up {
+.form_container {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -146,6 +144,66 @@ body {
 
 .icon {
   max-width: 1.875em;
+}
+
+.form_container,
+.addEvents_form,
+.login_form,
+.signup_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_container {
+  padding: 1rem;
+  align-items: center;
+}
+
+.validation_text {
+  font-family: "IstokWeb";
+}
+
+label {
+  text-align: left;
+  padding: 1rem 0.25;
+  font-family: "IstokWeb";
+}
+
+input,
+textarea {
+  margin: 0.5 rem 0;
+  background-color: var(--beige);
+  border-color: var(--grey);
+  padding: 0.5rem;
+  border-radius: 2px;
+}
+
+button {
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.reserve_btn {
+  background-color: var(--beige);
+  border-color: var(--grey);
+  cursor: pointer;
+}
+
+.submit_btn :disabled {
+  background-color: var(--grey);
+}
+
+.submit_btn :hover {
+  background-color: var(--beige);
+}
+
+.submit_btn,
+.reserve_btn {
+  font-family: "Italiana";
+  font-size: 1rem;
+  color: var(--black);
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 405px) {

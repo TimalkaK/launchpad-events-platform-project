@@ -75,9 +75,9 @@ export const AddEvents = ({ onAdd = () => {} }: FuncProps) => {
   };
 
   return (
-    <section className="add_events">
+    <section className="form_container">
       <h2 className="header__title">Add An Event</h2>
-      <form name="form" onSubmit={handleSubmit}>
+      <form className="addEvents_form" name="form" onSubmit={handleSubmit}>
         <label htmlFor="eventName">Event Name</label>
         <input
           type="text"
@@ -131,7 +131,9 @@ export const AddEvents = ({ onAdd = () => {} }: FuncProps) => {
         ></input>
         <br />
         <Validate message={showValidation} />
-        <button disabled={disableButton}>Submit</button>
+        <button className="submit_btn" disabled={disableButton}>
+          Submit
+        </button>
       </form>
       <SubmitResponse message={submitResponse} />
     </section>
