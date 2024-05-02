@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
-import { ValidateLogin } from "./validateLogin";
+import { ValidateSignUp } from "./validateSignUp";
 
-export const Login = () => {
-  const [username, setUsername] = useState("");
+export const SignUp = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [userType, setUserType] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [disableButton, setDisableButton] = useState(true);
   const [showValidation, setValidation] = useState(
     "Please enter a username and password"
   );
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (username.length >= 2 && password.length >= 2 && password.length <= 8) {
       setDisableButton(false);
       setValidation("");
@@ -24,7 +27,7 @@ export const Login = () => {
         setValidation("Please enter an 8 character password.");
       }
     }
-  }, [username, password]);
+  }, [username, password]);*/
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -32,16 +35,43 @@ export const Login = () => {
   };
 
   return (
-    <section className="login_form">
-      <h2 className="header__title">Log In</h2>
+    <section className="sign_up">
+      <h2 className="header__title">Sign Up</h2>
       <form name="form" onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="firstName">First Name</label>
         <input
           type="text"
-          name="username"
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          name="firstName"
+          id="firstName"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+        ></input>
+        <br />
+        <label htmlFor="lastName">Last Name</label>
+        <input
+          type="text"
+          name="lastName"
+          id="lastName"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        ></input>
+        <br />
+        <label htmlFor="userType">User Type</label>
+        <input
+          type="text"
+          name="userType"
+          id="userType"
+          value={userType}
+          onChange={(e) => setUserType(e.target.value)}
+        ></input>
+        <br />
+        <label htmlFor="email">Email</label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         ></input>
         <br />
         <label htmlFor="password">Password</label>
@@ -53,11 +83,9 @@ export const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         ></input>
         <br />
-        <ValidateLogin message={showValidation} />
+        <ValidateSignUp message={showValidation} />
         <button disabled={disableButton}>Submit</button>
       </form>
     </section>
   );
 };
-
-export default Login;

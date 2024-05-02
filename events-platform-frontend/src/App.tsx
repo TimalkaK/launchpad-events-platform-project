@@ -9,6 +9,7 @@ import EventCard from "./components/event_card";
 import { v4 as uuidv4 } from "uuid";
 import { Route, Routes } from "react-router-dom";
 import { HomePage } from "./components/home_page";
+import { SignUp } from "./components/signUpForm/signUp";
 
 function App(): JSX.Element {
   const eventData: Array<Event> = [
@@ -67,29 +68,14 @@ function App(): JSX.Element {
       <main>
         <div className="route_container">
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<HomePage events={events} />} />
             <Route
               path="/addEvents"
               element={<AddEvents onAdd={createEvent} />}
             />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
-        </div>
-
-        <div className="cards__wrapper">
-          {events.map((event, index) => (
-            <EventCard
-              key={event.id}
-              name={event.name}
-              description={event.description}
-              startDate={event.startDate}
-              endDate={event.endDate}
-              time={event.time}
-              price={event.price}
-              eventIndex={index}
-            />
-          ))}
-          ;
         </div>
       </main>
       <Footer />

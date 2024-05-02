@@ -22,7 +22,7 @@ function Footer(): JSX.Element {
               Help
             </a>
           </li>
-          <li className="links">&copy; 2021 TR Inc.</li>
+          <li className="links">&copy; 2024 Launchpad Project.</li>
         </ul>
       </section>
     </footer>

@@ -75,9 +75,8 @@ export const AddEvents = ({ onAdd = () => {} }: FuncProps) => {
   };
 
   return (
-    <section className="addEvents">
-      <p>Create Event</p>
-
+    <section className="add_events">
+      <h2 className="header__title">Add An Event</h2>
       <form name="form" onSubmit={handleSubmit}>
         <label htmlFor="eventName">Event Name</label>
         <input

@@ -32,7 +32,7 @@ body {
 }
 
 .header__title {
-  color: var(--beige);
+  color: var(--black);
   font-family: "Italiana";
 }
 
@@ -42,7 +42,10 @@ body {
   margin-top: 0.25em;
 }
 
-.cards__wrapper {
+.cards__wrapper,
+.add_events,
+.login_form,
+.sign_up {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
