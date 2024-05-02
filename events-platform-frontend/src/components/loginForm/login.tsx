@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ValidateLogin } from "./validateLogin";
 
 export const Login = () => {
-  const [username, setUsername] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
   const [disableButton, setDisableButton] = useState(true);
   const [showValidation, setValidation] = useState(
@@ -10,51 +10,55 @@ export const Login = () => {
   );
 
   useEffect(() => {
-    if (username.length >= 2 && password.length >= 2 && password.length <= 8) {
+    if (userEmail.length >= 2 && password.length >= 2 && password.length <= 8) {
       setDisableButton(false);
       setValidation("");
     } else {
       setDisableButton(true);
 
-      if (username.length === 0 && password.length === 0) {
+      if (userEmail.length === 0 && password.length === 0) {
         setValidation("Please enter a username and password");
-      } else if (username.length < 2) {
+      } else if (userEmail.length < 2) {
         setValidation("Please enter your username");
       } else if (password.length < 1 || password.length > 8) {
         setValidation("Please enter an 8 character password.");
       }
     }
-  }, [username, password]);
+  }, [userEmail, password]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("User logged in");
+    console.log(userEmail);
+    console.log(password);
   };
 
   return (
     <section className="login_form">
       <h2 className="header__title">Log In</h2>
       <form name="form" onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="userEmail">Email</label>
         <input
-          type="text"
-          name="username"
+          type="email"
+          name="userEmail"
+          placeholder="joebloggs@gmail.com"
           id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={userEmail}
+          onChange={(e) => setUserEmail(e.target.value)}
         ></input>
         <br />
         <label htmlFor="password">Password</label>
         <input
-          type="text"
+          type="password"
           name="password"
+          placeholder="********"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
         <br />
         <ValidateLogin message={showValidation} />
-        <button disabled={disableButton}>Submit</button>
+        <button disabled={disableButton}>Login</button>
       </form>
     </section>
   );

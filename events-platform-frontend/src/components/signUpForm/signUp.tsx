@@ -2,58 +2,59 @@ import { useState, useEffect } from "react";
 import { ValidateSignUp } from "./validateSignUp";
 
 export const SignUp = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [name, setName] = useState("");
   const [userType, setUserType] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [disableButton, setDisableButton] = useState(true);
   const [showValidation, setValidation] = useState(
-    "Please enter a username and password"
+    "To sign up, make sure to complete all fields."
   );
 
-  /*useEffect(() => {
-    if (username.length >= 2 && password.length >= 2 && password.length <= 8) {
+  useEffect(() => {
+    if (
+      name.length >= 2 &&
+      email.length >= 5 &&
+      password.length >= 2 &&
+      password.length <= 8
+    ) {
       setDisableButton(false);
       setValidation("");
     } else {
       setDisableButton(true);
 
-      if (username.length === 0 && password.length === 0) {
-        setValidation("Please enter a username and password");
-      } else if (username.length < 2) {
-        setValidation("Please enter your username");
+      if (name.length === 0 && email.length === 0 && password.length === 0) {
+        setValidation("To sign up, make sure to complete all fields.");
+      } else if (name.length < 2) {
+        setValidation("Please enter your name");
+      } else if (email.length < 2) {
+        setValidation("Please enter your email address");
       } else if (password.length < 1 || password.length > 8) {
         setValidation("Please enter an 8 character password.");
       }
     }
-  }, [username, password]);*/
+  }, [name, email, password]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("User logged in");
+    console.log("Yay! User has signed up.");
+    console.log(name);
+    console.log(userType);
+    console.log(email);
+    console.log(password);
   };
 
   return (
     <section className="sign_up">
       <h2 className="header__title">Sign Up</h2>
       <form name="form" onSubmit={handleSubmit}>
-        <label htmlFor="firstName">First Name</label>
+        <label htmlFor="name">Name</label>
         <input
           type="text"
-          name="firstName"
-          id="firstName"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        ></input>
-        <br />
-        <label htmlFor="lastName">Last Name</label>
-        <input
-          type="text"
-          name="lastName"
-          id="lastName"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
+          name="name"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         ></input>
         <br />
         <label htmlFor="userType">User Type</label>
@@ -67,8 +68,9 @@ export const SignUp = () => {
         <br />
         <label htmlFor="email">Email</label>
         <input
-          type="text"
+          type="email"
           name="email"
+          placeholder="joebloggs@gmail.com"
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -76,15 +78,16 @@ export const SignUp = () => {
         <br />
         <label htmlFor="password">Password</label>
         <input
-          type="text"
+          type="password"
           name="password"
+          placeholder="********"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
         <br />
         <ValidateSignUp message={showValidation} />
-        <button disabled={disableButton}>Submit</button>
+        <button disabled={disableButton}>Sign Up</button>
       </form>
     </section>
   );

@@ -114,6 +114,7 @@ export const AddEvents = ({ onAdd = () => {} }: FuncProps) => {
         <label htmlFor="time">Time</label>
         <input
           type="text"
+          placeholder="e.g 19:00 - 20:00"
           name="time"
           id="time"
           value={time}
