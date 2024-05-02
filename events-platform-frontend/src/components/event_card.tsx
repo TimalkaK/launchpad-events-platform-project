@@ -7,31 +7,16 @@ import { calendar_v3 } from "googleapis";
 
 const images = [
   {
-    //image: cat1,
-    //altText: "Describe this cat!",
     image: yogaspace,
     altText: "Calming space with candles",
-    //licenceType: "CC BY-SA 2.0",
-    //licenceUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
-    //attributionName: "amblin",
-    //attributionUrl: "https://www.flickr.com/people/amblin/",
   },
   {
     image: crystals,
     altText: "A plate of different crystals",
-    //licenceType: "CC BY-SA 2.0",
-    //licenceUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
-    //attributionName: "ivva",
-    //attributionUrl: "https://www.flickr.com/people/ivva/",
   },
   {
     image: soundbowls,
     altText: "Big metal sound bowls",
-    //licenceType: "CC BY-ND 2.0",
-    //licenceUrl: "https://creativecommons.org/licenses/by-nd/2.0/",
-    //attributionName: "Rachele Pettarelli Ph",
-    //attributionUrl: "https://www.flickr.com/people/rachephotos/",
-  },
 ];
 
 interface EventCardProps {
@@ -145,10 +130,6 @@ const EventCard: React.FC<EventCardProps> = ({
         <EventImage
           image={images[eventIndex].image}
           altText={images[eventIndex].altText}
-          /*licenceType={images[eventIndex].licenceType}
-          licenceUrl={images[eventIndex].licenceUrl}
-          attributionName={images[eventIndex].attributionName}
-      attributionUrl={images[eventIndex].attributionUrl}*/
         />
       )}
 
@@ -161,7 +142,7 @@ const EventCard: React.FC<EventCardProps> = ({
       <p className="card__text">Time: {time}</p>
       <p className="card__text">£{price}</p>
       <button className="reserve_btn" onClick={handleReserve}>
-        Reserve
+        Reserve/Add to Calendar
       </button>
     </div>
   );
