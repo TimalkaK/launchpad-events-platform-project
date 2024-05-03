@@ -17,6 +17,7 @@ const images = [
   {
     image: soundbowls,
     altText: "Big metal sound bowls",
+  },
 ];
 
 interface EventCardProps {

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ValidateSignUp } from "./validateSignUp";
+import { SignUpResponse } from "./signupResponse";
 
 export const SignUp = () => {
   const [name, setName] = useState("");
@@ -10,6 +11,8 @@ export const SignUp = () => {
   const [showValidation, setValidation] = useState(
     "To sign up, make sure to complete all fields."
   );
+
+  const [showResponse, setShowResponse] = useState("");
 
   useEffect(() => {
     if (
@@ -42,6 +45,12 @@ export const SignUp = () => {
     console.log(userType);
     console.log(email);
     console.log(password);
+
+    setShowResponse("You have successfully signed up.");
+    setName("");
+    setUserType("");
+    setEmail("");
+    setPassword("");
   };
 
   return (
@@ -91,6 +100,7 @@ export const SignUp = () => {
           Sign Up
         </button>
       </form>
+      <SignUpResponse message={showResponse} />
     </section>
   );
 };

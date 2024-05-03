@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Validate } from "./validate";
-import { SubmitResponse } from "./submitResponse";
 import Event from "../../data/event";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useContext } from "react";
+import { enableAddEventsContext, EnableAddEventsContextType } from "../../App";
 
 interface FuncProps {
   onAdd: (anEvent: Event) => void;
@@ -19,7 +20,10 @@ export const AddEvents = ({ onAdd = () => {} }: FuncProps) => {
   const [showValidation, setValidation] = useState(
     "To submit, make sure to complete all fields."
   );
-  const [submitResponse, setSubmitResponse] = useState("");
+
+  const addEventsContext = useContext(enableAddEventsContext);
+  const [enableAddEvents, setEnableAddEvents] =
+    useState<EnableAddEventsContextType>(addEventsContext);
 
   useEffect(() => {
     if (
@@ -75,67 +79,76 @@ export const AddEvents = ({ onAdd = () => {} }: FuncProps) => {
   };
 
   return (
-    <section className="form_container">
-      <h2 className="header__title">Add An Event</h2>
-      <form className="addEvents_form" name="form" onSubmit={handleSubmit}>
-        <label htmlFor="eventName">Event Name</label>
-        <input
-          type="text"
-          name="eventName"
-          id="eventName"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        ></input>
-        <br />
-        <label htmlFor="description">Description</label>
-        <textarea
-          name="description"
-          id="description"
-          rows={4}
-          cols={40}
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        ></textarea>
-        <br />
-        <label htmlFor="startDate">Start Date</label>
-        <DatePicker
-          name="date"
-          selected={startDate}
-          onChange={(thedate: Date) => setStartDate(thedate)}
-        />
-        <br />
-        <label htmlFor="endDate">End Date</label>
-        <DatePicker
-          name="date"
-          selected={endDate}
-          onChange={(thedate: Date) => setEndDate(thedate)}
-        />
-        <br />
-        <label htmlFor="time">Time</label>
-        <input
-          type="text"
-          placeholder="e.g 19:00 - 20:00"
-          name="time"
-          id="time"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
-        ></input>
-        <br />
-        <label htmlFor="price">Price</label>
-        <input
-          type="number"
-          name="price"
-          id="price"
-          value={price}
-          onChange={(e) => setPrice(e.target.valueAsNumber)}
-        ></input>
-        <br />
-        <Validate message={showValidation} />
-        <button className="submit_btn" disabled={disableButton}>
-          Submit
-        </button>
-      </form>
-      <SubmitResponse message={submitResponse} />
-    </section>
+    <>
+      {enableAddEvents ? (
+        <section className="form_container">
+          <h2 className="header__title">Add An Event</h2>
+          <form className="addEvents_form" name="form" onSubmit={handleSubmit}>
+            <label htmlFor="eventName">Event Name</label>
+            <input
+              type="text"
+              name="eventName"
+              id="eventName"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            ></input>
+            <br />
+            <label htmlFor="description">Description</label>
+            <textarea
+              name="description"
+              id="description"
+              rows={4}
+              cols={40}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            ></textarea>
+            <br />
+            <label htmlFor="startDate">Start Date</label>
+            <DatePicker
+              name="date"
+              selected={startDate}
+              onChange={(thedate: Date) => setStartDate(thedate)}
+            />
+            <br />
+            <label htmlFor="endDate">End Date</label>
+            <DatePicker
+              name="date"
+              selected={endDate}
+              onChange={(thedate: Date) => setEndDate(thedate)}
+            />
+            <br />
+            <label htmlFor="time">Time</label>
+            <input
+              type="text"
+              placeholder="e.g 19:00 - 20:00"
+              name="time"
+              id="time"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+            ></input>
+            <br />
+            <label htmlFor="price">Price</label>
+            <input
+              type="number"
+              name="price"
+              id="price"
+              value={price}
+              onChange={(e) => setPrice(e.target.valueAsNumber)}
+            ></input>
+            <br />
+            <Validate message={showValidation} />
+            <button className="submit_btn" disabled={disableButton}>
+              Submit
+            </button>
+          </form>
+        </section>
+      ) : (
+        <section>
+          <h2 className="header__title">
+            You must be a staff member to add events.
+          </h2>
+        </section>
+      )}
+    </>
   );
 };

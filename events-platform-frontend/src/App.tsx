@@ -3,13 +3,26 @@ import Navbar from "./components/navbar";
 import { AddEvents } from "./components/addEvents/addEvents";
 import Login from "./components/loginForm/login";
 import Footer from "./components/footer";
-import { useState } from "react";
+import { useState, createContext, Dispatch, SetStateAction } from "react";
 import Event from "./data/event";
-import EventCard from "./components/event_card";
 import { v4 as uuidv4 } from "uuid";
 import { Route, Routes } from "react-router-dom";
 import { HomePage } from "./components/home_page";
 import { SignUp } from "./components/signUpForm/signUp";
+
+export interface EnableAddEventsContextType {
+  enableAddEvents: boolean;
+  setEnableAddEvents: Dispatch<SetStateAction<boolean>>;
+}
+
+export const AddEventsContextDefaultValue: EnableAddEventsContextType = {
+  enableAddEvents: true,
+  setEnableAddEvents: () => true,
+};
+
+export const enableAddEventsContext = createContext<EnableAddEventsContextType>(
+  AddEventsContextDefaultValue
+);
 
 function App(): JSX.Element {
   const eventData: Array<Event> = [
@@ -44,6 +57,7 @@ function App(): JSX.Element {
   eventData.forEach((event) => (event.id = uuidv4())); // each event should now have a unique ID
 
   const [events, setEvents] = useState<Array<Event>>(eventData);
+  const [enableAddEvents, setEnableAddEvents] = useState(false);
 
   const createEvent = (anEvent: Event) => {
     console.log("Yay I am on the parent component", anEvent);
@@ -66,17 +80,21 @@ function App(): JSX.Element {
     <>
       <Navbar />
       <main>
-        <div className="route_container">
-          <Routes>
-            <Route path="/" element={<HomePage events={events} />} />
-            <Route
-              path="/addEvents"
-              element={<AddEvents onAdd={createEvent} />}
-            />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
-          </Routes>
-        </div>
+        <enableAddEventsContext.Provider
+          value={{ enableAddEvents, setEnableAddEvents }}
+        >
+          <div className="route_container">
+            <Routes>
+              <Route path="/" element={<HomePage events={events} />} />
+              <Route
+                path="/addEvents"
+                element={<AddEvents onAdd={createEvent} />}
+              />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<SignUp />} />
+            </Routes>
+          </div>
+        </enableAddEventsContext.Provider>
       </main>
       <Footer />
     </>

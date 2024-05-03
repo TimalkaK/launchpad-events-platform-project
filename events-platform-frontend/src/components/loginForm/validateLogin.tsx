@@ -5,7 +5,9 @@ export interface ValidateLoginProps {
 export const ValidateLogin: React.FC<ValidateLoginProps> = (props) => {
   return (
     <>
-      <p style={{ color: "black" }}>{props.message}</p>
+      <p className="validation_text" style={{ color: "black" }}>
+        {props.message}
+      </p>
     </>
   );
 };

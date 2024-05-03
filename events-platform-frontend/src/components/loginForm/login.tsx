@@ -1,13 +1,25 @@
 import { useState, useEffect } from "react";
 import { ValidateLogin } from "./validateLogin";
+import { LoginResponse } from "./loginResponse";
+import { useContext } from "react";
+import { enableAddEventsContext, EnableAddEventsContextType } from "../../App";
 
 export const Login = () => {
   const [userEmail, setUserEmail] = useState("");
+  const [userType, setUserType] = useState("non-staff");
   const [password, setPassword] = useState("");
   const [disableButton, setDisableButton] = useState(true);
   const [showValidation, setValidation] = useState(
     "Please enter a username and password"
   );
+  const [showResponse, setShowResponse] = useState("");
+  //const [staff, setStaff] = useState(false);
+
+  const addEventsContext = useContext(enableAddEventsContext);
+  const [enableAddEvents, setEnableAddEvents] =
+    useState<EnableAddEventsContextType>(addEventsContext);
+
+  console.log(enableAddEvents);
 
   useEffect(() => {
     if (userEmail.length >= 2 && password.length >= 2 && password.length <= 8) {
@@ -30,7 +42,26 @@ export const Login = () => {
     event.preventDefault();
     console.log("User logged in");
     console.log(userEmail);
+    console.log(userType);
     console.log(password);
+
+    if (userType === "staff") {
+      setEnableAddEvents((prevState) => ({
+        ...prevState,
+        enableAddEvents: true,
+      }));
+      console.log(enableAddEvents);
+    } else if (userType === "non-staff") {
+      setEnableAddEvents((prevState) => ({
+        ...prevState,
+        enableAddEvents: false,
+      }));
+      console.log(enableAddEvents);
+    }
+
+    setShowResponse("");
+    setUserEmail("");
+    setPassword("");
   };
 
   return (
@@ -47,6 +78,20 @@ export const Login = () => {
           onChange={(e) => setUserEmail(e.target.value)}
         ></input>
         <br />
+        <label htmlFor="userType">User Type</label>
+        <select
+          id="userType"
+          name="userType"
+          value={userType}
+          onChange={(e) => {
+            const value = e.target.value;
+            setUserType(value);
+          }}
+        >
+          <option value="staff">Staff</option>
+          <option value="non-staff">Non-staff</option>
+        </select>
+        <br />
         <label htmlFor="password">Password</label>
         <input
           type="password"
@@ -62,6 +107,8 @@ export const Login = () => {
           Login
         </button>
       </form>
+
+      <LoginResponse message={showResponse} />
     </section>
   );
 };
