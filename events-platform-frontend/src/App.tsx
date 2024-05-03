@@ -16,8 +16,8 @@ export interface EnableAddEventsContextType {
 }
 
 export const AddEventsContextDefaultValue: EnableAddEventsContextType = {
-  enableAddEvents: true,
-  setEnableAddEvents: () => true,
+  enableAddEvents: false,
+  setEnableAddEvents: () => {},
 };
 
 export const enableAddEventsContext = createContext<EnableAddEventsContextType>(
@@ -58,6 +58,8 @@ function App(): JSX.Element {
 
   const [events, setEvents] = useState<Array<Event>>(eventData);
   const [enableAddEvents, setEnableAddEvents] = useState(false);
+
+  //console.log(enableAddEvents);
 
   const createEvent = (anEvent: Event) => {
     console.log("Yay I am on the parent component", anEvent);

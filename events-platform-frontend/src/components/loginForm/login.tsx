@@ -46,17 +46,18 @@ export const Login = () => {
     console.log(password);
 
     if (userType === "staff") {
-      setEnableAddEvents((prevState) => ({
+      //setEnableAddEvents(true);
+      /*setEnableAddEvents((prevState) => ({
         ...prevState,
         enableAddEvents: true,
-      }));
-      console.log(enableAddEvents);
+      }));*/
+      //console.log(enableAddEvents);
     } else if (userType === "non-staff") {
-      setEnableAddEvents((prevState) => ({
+      /*setEnableAddEvents((prevState) => ({
         ...prevState,
         enableAddEvents: false,
-      }));
-      console.log(enableAddEvents);
+      }));*/
+      //console.log(enableAddEvents);
     }
 
     setShowResponse("");

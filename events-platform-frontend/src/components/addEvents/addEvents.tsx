@@ -25,6 +25,8 @@ export const AddEvents = ({ onAdd = () => {} }: FuncProps) => {
   const [enableAddEvents, setEnableAddEvents] =
     useState<EnableAddEventsContextType>(addEventsContext);
 
+  console.log(enableAddEvents);
+
   useEffect(() => {
     if (
       name.length >= 2 &&
