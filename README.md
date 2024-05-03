@@ -8,7 +8,7 @@ This is a website that is created for a wellness community who has many events e
 
 Fork this repo to your Github and then clone the forked version of this repo. 
 
-### The project resides in events-platform-frontend folder. Please open up this to access the server.
+### The project resides in events-platform-frontend folder. Please open this up to access the server.
 
 To install the dependencies run:
 
