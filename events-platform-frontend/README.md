@@ -1,3 +1,7 @@
+## Welcome to the Event Platform Project
+
+This is a website that is created for a wellness community who has many events each month. User can create events to the platform and save events to their calendar.
+
 ## How to Get Started
 
 Fork this repo to your Github and then clone the forked version of this repo
